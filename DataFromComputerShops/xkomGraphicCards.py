@@ -81,26 +81,36 @@ if((os.path.isfile('./'+categoryName+'.csv'))==False):
             csvrow=[]
         csvWriter.writerows(all)
         csvfile.close()
-del listProductNames[0],listProductPrices[0]
-with open((categoryName+'.csv'), 'r') as csvinput:
-    reader = csv.reader(csvinput)
-    all = []
-    products=[]
-    prices=[]
-    row = next(reader)
-    row.append(today)
-    all.append(row)
-    for row in reader:
-        if(row[0] in listProductNames):
-            row.append(listProductPrices[listProductNames.index(row[0])])
-        else:
-            row.append('')
-        products.append(row[0])
-        prices.append(row[1:])
+else:
+    with open((categoryName+'.csv'), 'r') as csvinput:
+        reader = csv.reader(csvinput)
+        all = []
+        products=[]
+        prices=[]
+        row = next(reader)
+        row.append(today)
         all.append(row)
-
-with open((categoryName+'.csv'),'w') as csvoutput:
-    writer = csv.writer(csvoutput, lineterminator='\n')
-    writer.writerows(all)
-
+        for row in reader:
+            if(row[0] in listProductNames):
+                row.append(listProductPrices[listProductNames.index(row[0])])
+            else:
+                row.append('')
+            products.append(row[0])
+            prices.append(row[1:])
+            all.append(row)
+        for product in listProductNames:
+            if(product not in products):
+                rowlen=len(row)
+                products.append(product)
+                prices.append(listProductPrices[listProductNames.index(product)])
+                row=[]
+                row.append(product)
+                for i in range(rowlen-2):
+                    row.append('')
+                row.append(prices[-1])
+                all.append(row)
+    with open((categoryName+'.csv'),'w') as csvoutput:
+        writer = csv.writer(csvoutput, lineterminator='\n')
+        writer.writerows(all)
+    
 os.chdir(path_base)
