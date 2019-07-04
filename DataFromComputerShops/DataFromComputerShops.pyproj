@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>865b6128-f05f-4feb-9b92-5f5a6f8624ef</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>xkomGraphicCards.py</StartupFile>
+    <StartupFile>xkomCPUs.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,8 @@
     <Compile Include="tests.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="xkomRAMs.py" />
+    <Compile Include="xkomCPUs.py" />
     <Compile Include="xkomGraphicCards.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

@@ -14,7 +14,7 @@ import datetime
 now = datetime.datetime.now()
 today=now.strftime("%d.%m.%Y")
 baseurl='https://www.x-kom.pl/'
-my_url='g-5/c/345-karty-graficzne.html?page=1&per_page=90&f[1704][85327]=1&f[1704][25904]=1&f[1704][25756]=1&f[1704][18575]=1'
+my_url='g-5/c/11-procesory.html?page=1&per_page=90&f[manufacturers][3]=1&f[manufacturers][1]=1&f[1751][18855]=1&f[1751][18856]=1&f[1751][18857]=1&f[1751][70157]=1&f[1751][93463]=1&f[1751][97570]=1&f[1751][93464]=1&f[1751][97571]=1&f[1751][130474]=1&f[1751][122083]=1'
 url=baseurl+my_url
 uClient=urlopen(url)
 page_html=uClient.read()
@@ -54,7 +54,7 @@ if(pagesMax>1):
     pages
     for page in pages:
         print(page)
-        my_url='g-5/c/345-karty-graficzne.html?page='+str(page)+'&per_page=90&f[1704][85327]=1&f[1704][25904]=1&f[1704][25756]=1&f[1704][18575]=1'#url_restaurant
+        my_url='g-5/c/11-procesory.html?page='+str(page)+'&per_page=90&f[manufacturers][3]=1&f[manufacturers][1]=1&f[1751][18855]=1&f[1751][18856]=1&f[1751][18857]=1&f[1751][70157]=1&f[1751][93463]=1&f[1751][97570]=1&f[1751][93464]=1&f[1751][97571]=1&f[1751][130474]=1&f[1751][122083]=1'
         url=baseurl+my_url
         uClient=urlopen(url)
         page_html=uClient.read()

@@ -338,3 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/DataFromComputerShops/Procesory.csv
+/DataFromComputerShops/Karty graficzne.csv
+/DataFromComputerShops/Pamięci RAM DDR4.csv
